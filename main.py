@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+from app.core.gcp import setup_gcp_credentials
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.router import api_router
 
+setup_gcp_credentials()
 app = FastAPI(title="Pulse Back")
 
 app.add_middleware(
